@@ -4,6 +4,8 @@ import java.util.StringJoiner;
 
 public class MyQueue<T> {
 
+    /* FIFO */
+
     private static final int INIT_SIZE = 16;
     private Object[] data;
     private int index = 0;
@@ -58,7 +60,6 @@ public class MyQueue<T> {
     }
 
 //    poll() повертає перший елемент з черги і видаляє його з колекції
-    //    remove(int index) видаляє елемент із вказаним індексом
     public T poll() {
         if (isEmpty()) {
             return null;
@@ -75,7 +76,7 @@ public class MyQueue<T> {
 
     @Override
     public String toString() {
-        StringJoiner result = new StringJoiner(", ");
+        StringJoiner result = new StringJoiner("<-");
         for (int i = 0; i < index; i++) {
             result.add(data[i].toString());
         }
